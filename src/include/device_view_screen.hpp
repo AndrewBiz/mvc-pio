@@ -12,8 +12,11 @@ public:
     virtual ~DeviceViewScreen();
     virtual void update();
     void draw_screen();
+protected:
+    static const size_t ScrBufSize = 21;
 private:
-    DeviceModel* _model;
+    DeviceModel * _model;
+    char _scr_buf[ScrBufSize];
 };
 
 #endif

@@ -2,12 +2,15 @@
 */
 #include "include/device_view_screen.hpp"
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
-DeviceViewScreen::DeviceViewScreen(DeviceModel* m) {
+DeviceViewScreen::DeviceViewScreen(DeviceModel * m) :
+    _model(m)
+{
+    snprintf(_scr_buf, ScrBufSize, "                    ");
     cout << "DeviceViewScreen constructor triggered" << endl;
-    _model = m;
     _model->attach_observer(this);
 }
 
@@ -18,9 +21,12 @@ DeviceViewScreen::~DeviceViewScreen() {
 
 void DeviceViewScreen::update() {
     cout << "DeviceViewScreen::update triggered" << endl;
+    snprintf(_scr_buf, ScrBufSize, "%d Hz", _model->get_value());
     draw_screen();
 }
 
 void DeviceViewScreen::draw_screen() {
-    cout << "\nSCREEN: " << _model->get_value() << "\n" << endl;
+    cout << "\n        ----------------------" << endl;
+    cout <<   "SCREEN: |" << _scr_buf <<   "|" << endl;
+    cout <<   "        ----------------------" << "\n" << endl;
 }
