@@ -11,7 +11,7 @@ DeviceController::DeviceController(DeviceModel * m) :
 {
     cout << "DeviceController constructor triggered" << endl;
     // _screen - welcome message
-    _model->set_value(777);  // initialize model
+    _model->initialize();
 }
 
 DeviceController::~DeviceController() {
