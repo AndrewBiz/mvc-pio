@@ -5,8 +5,9 @@
 
 using namespace std;
 
-Model::Model() {
-    _number_observers = 0;
+Model::Model() :
+    _number_observers(0)
+{
     for (size_t i = 0; i < MaxObservers; i++) {
         _observer[i] = nullptr;
     };

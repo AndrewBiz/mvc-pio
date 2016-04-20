@@ -6,9 +6,10 @@
 
 using namespace std;
 
-DeviceModel::DeviceModel() {
+DeviceModel::DeviceModel() :
+    _value(0)
+{
     cout << "DeviceModel constructor triggered" << endl;
-    _value = 0;
 }
 
 void DeviceModel::set_value(int v) {
