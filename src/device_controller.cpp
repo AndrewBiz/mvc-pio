@@ -7,19 +7,16 @@ using namespace std;
 
 DeviceController::DeviceController(DeviceModel * m) :
     _model(m),
-    _screen(new DeviceViewScreen(_model)),
-    _dds(new DeviceViewDDS(_model))
+    _screen(new DeviceViewScreen(_model))
 {
     cout << "DeviceController constructor triggered" << endl;
     // _screen - welcome message
-    // _dds - initialize somehow
     _model->set_value(777);  // initialize model
 }
 
 DeviceController::~DeviceController() {
     cout << "DeviceController ~destructor triggered" << endl;
     delete _screen;
-    delete _dds;
 }
 
 void DeviceController::handle_event(char evt) {

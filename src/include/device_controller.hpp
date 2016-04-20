@@ -6,7 +6,6 @@
 #include "controller.hpp"
 #include "device_model.hpp"
 #include "device_view_screen.hpp"
-#include "device_view_dds.hpp"
 
 class DeviceController : public Controller {
 public:
@@ -19,7 +18,6 @@ public:
 private:
     DeviceModel * _model;
     DeviceViewScreen * _screen;
-    DeviceViewDDS * _dds;
     virtual void save_to_memory(int memory_slot);
     virtual void load_from_memory(int memory_slot);
 };

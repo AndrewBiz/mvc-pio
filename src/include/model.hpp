@@ -16,7 +16,7 @@ public:
     virtual void notify_observers();
 protected:
     Model();
-    static const size_t MaxObservers = 2;
+    static const size_t MaxObservers = 1;
 private:
     View * _observer[MaxObservers];
     size_t _number_observers;
