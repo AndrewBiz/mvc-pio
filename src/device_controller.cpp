@@ -33,22 +33,40 @@ void DeviceController::handle_event(char evt) {
     case 'W':
         load_from_memory(2);
         break;
+    case 'j':  //down
+        change_value(-1);
+        break;
+    case 'J':  //down
+        change_value(-5);
+        break;
+    case 'k':  //up
+        change_value(1);
+        break;
+    case 'K':  //up
+        change_value(5);
+        break;
+    case 'h':  //prev step
+        prev_step_level();
+        break;
+    case 'l':  //next step
+        next_step_level();
+        break;
     default:
         cout << "UNKNOWN EVENT: " << evt << endl;
         break;
     }
 };
 
-void DeviceController::change_value(int steps) {
-
+void DeviceController::change_value(int8_t steps) {
+    _model->change_value(steps);
 };
 
 void DeviceController::next_step_level() {
-
+    _model->next_step_level();
 };
 
 void DeviceController::prev_step_level() {
-
+    _model->prev_step_level();
 };
 
 void DeviceController::save_to_memory(int memory_slot) {

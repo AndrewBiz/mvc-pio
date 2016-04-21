@@ -21,7 +21,7 @@ DeviceViewScreen::~DeviceViewScreen() {
 
 void DeviceViewScreen::update() {
     cout << "DeviceViewScreen::update triggered" << endl;
-    snprintf(_scr_buf, ScrBufSize, "%d Hz                 ", _model->get_value());
+    snprintf(_scr_buf, ScrBufSize, "%u Hz (%u)           ", _model->get_value(), _model->get_step_level());
     draw_screen();
 }
 
