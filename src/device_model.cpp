@@ -3,7 +3,6 @@
 */
 #include "include/device_model.hpp"
 #include <iostream>
-#include <process.h>
 
 using namespace std;
 
@@ -18,11 +17,11 @@ DeviceModel::DeviceModel() :
 
 void DeviceModel::initialize() {
     cout << "DeviceModel::initialize triggered" << endl;
-    srand(getpid());
+    srand(123);
     _value = rand() % 10000;
-    cout << "... reading default value from Memory: " << _value << endl;
+    cout << "... reading default value from Memory M0: " << _value << endl;
     _step_level_index = rand() % MaxStepLevels;
-    cout << "... reading default step_level from Memory: " << StepLevel[_step_level_index]\
+    cout << "... reading default step_level from Memory M0: " << StepLevel[_step_level_index]\
          << " (" << int(_step_level_index) << ") " << endl;
     notify_observers();
 }
