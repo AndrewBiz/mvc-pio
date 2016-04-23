@@ -5,6 +5,7 @@
 
 #include "device_model.hpp"
 #include "device_view_screen.hpp"
+#include "device_state.hpp"
 
 class DeviceController {
 public:
@@ -17,8 +18,6 @@ public:
 private:
     DeviceModel * _model;
     DeviceViewScreen * _screen;
-    virtual void save_to_memory(int memory_slot);
-    virtual void load_from_memory(int memory_slot);
+    DeviceState * _state;
 };
-
 #endif
