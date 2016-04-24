@@ -10,6 +10,8 @@ class DeviceModel : public Model {
 public:
     DeviceModel();
     void initialize();
+    void save_to_memory(int memory_slot);
+    void load_from_memory(int memory_slot);
     void set_value(uint32_t v);
     void change_value(int8_t steps);
     uint32_t get_value();

@@ -6,7 +6,7 @@
 
 class DeviceStateNormal : public DeviceState {
 public:
-    DeviceStateNormal(DeviceController *);
+    DeviceStateNormal(DeviceModel *);
     // virtual ~DeviceStateNormal() = default;
     virtual void save_to_memory(int memory_slot);
     virtual void load_from_memory(int memory_slot);

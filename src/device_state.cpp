@@ -5,8 +5,8 @@
 
 using namespace std;
 
-DeviceState::DeviceState(DeviceController * dc) :
-    _controller(dc)
+DeviceState::DeviceState(DeviceModel * dm) :
+    _model(dm)
 {
     cout << "DeviceState constructor triggered" << endl;
 }

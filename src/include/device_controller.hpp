@@ -12,9 +12,6 @@ public:
     DeviceController(DeviceModel *);
     virtual ~DeviceController();
     virtual void handle_event(char);
-    virtual void change_value(int8_t steps);
-    virtual void next_step_level();
-    virtual void prev_step_level();
 private:
     DeviceModel * _model;
     DeviceViewScreen * _screen;

@@ -26,6 +26,14 @@ void DeviceModel::initialize() {
     notify_observers();
 }
 
+void DeviceModel::save_to_memory(int memory_slot) {
+    cout << "DeviceModel::save_to_memory - saving to slot " << memory_slot << endl;
+};
+
+void DeviceModel::load_from_memory(int memory_slot) {
+    cout << "DeviceModel::load_from_memory - loading from slot " << memory_slot << endl;
+};
+
 void DeviceModel::set_value(uint32_t v) {
     _value = v;
     cout << "DeviceModel::set_value " << _value << " triggered" << endl;
