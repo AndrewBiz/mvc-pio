@@ -10,11 +10,12 @@
 class DeviceController {
 public:
     DeviceController(DeviceModel *);
-    virtual ~DeviceController();
-    virtual void handle_event(char);
+    ~DeviceController();
+    void handle_event(char);
 private:
     DeviceModel * _model;
     DeviceViewScreen * _screen;
     DeviceState * _state;
+    void change_state_to(State new_state);
 };
 #endif

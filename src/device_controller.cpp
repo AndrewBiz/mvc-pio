@@ -2,6 +2,8 @@
 */
 #include "include/device_controller.hpp"
 #include "include/device_state_normal.hpp"
+#include "include/device_state_direct.hpp"
+#include "include/device_state_calibrate.hpp"
 #include <iostream>
 
 using namespace std;
@@ -54,8 +56,34 @@ void DeviceController::handle_event(char evt) {
     case 'l':  //next step
         _state->next_step_level();
         break;
+    case 's':  //change state - click
+        change_state_to(_state->click_change_state());
+        break;
+    case 'S':  //change state - long click
+        change_state_to(_state->long_click_change_state());
+        break;
     default:
         cout << "UNKNOWN EVENT: " << evt << endl;
         break;
     }
-};
+}
+
+void DeviceController::change_state_to(State new_state) {
+    cout << "DeviceController::change_state_to " << int(new_state) << " triggered" << endl;
+    switch (new_state) {
+    case State::Direct:
+        delete _state;
+        _state = new DeviceStateDirect(_model);
+        break;
+    case State::Calibration:
+        delete _state;
+        _state = new DeviceStateCalibrate(_model);
+        break;
+    case State::Normal:
+        delete _state;
+        _state = new DeviceStateNormal(_model);
+        break;
+    default:
+        break;
+    }
+}

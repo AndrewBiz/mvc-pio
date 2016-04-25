@@ -15,7 +15,7 @@ int main() {
     DeviceController * device_controller = new DeviceController(device_model);
 
     char evt;
-    cout << "Fire event (qQwWhjJkKl) ..." << endl;
+    cout << "Fire event (qQwWhjJkKlsS) ..." << endl;
 
     while (cin >> evt) {
         device_controller->handle_event(evt);

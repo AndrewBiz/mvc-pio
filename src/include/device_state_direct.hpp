@@ -1,13 +1,13 @@
 /*
 */
-#ifndef DEVICE_STATE_NORMAL_HPP
-#define DEVICE_STATE_NORMAL_HPP
+#ifndef DEVICE_STATE_DIRECT_HPP
+#define DEVICE_STATE_DIRECT_HPP
 #include "device_state.hpp"
 
-class DeviceStateNormal : public DeviceState {
+class DeviceStateDirect : public DeviceState {
 public:
-    DeviceStateNormal(DeviceModel *);
-    virtual ~DeviceStateNormal();
+    DeviceStateDirect(DeviceModel *);
+    virtual ~DeviceStateDirect();
     virtual void save_to_memory(int memory_slot);
     virtual void load_from_memory(int memory_slot);
     virtual void change_value(int8_t steps);

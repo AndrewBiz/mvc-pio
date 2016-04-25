@@ -1,13 +1,13 @@
 /*
 */
-#ifndef DEVICE_STATE_NORMAL_HPP
-#define DEVICE_STATE_NORMAL_HPP
+#ifndef DEVICE_STATE_CALIBRATE_HPP
+#define DEVICE_STATE_CALIBRATE_HPP
 #include "device_state.hpp"
 
-class DeviceStateNormal : public DeviceState {
+class DeviceStateCalibrate : public DeviceState {
 public:
-    DeviceStateNormal(DeviceModel *);
-    virtual ~DeviceStateNormal();
+    DeviceStateCalibrate(DeviceModel *);
+    virtual ~DeviceStateCalibrate();
     virtual void save_to_memory(int memory_slot);
     virtual void load_from_memory(int memory_slot);
     virtual void change_value(int8_t steps);

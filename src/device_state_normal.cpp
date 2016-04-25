@@ -11,6 +11,11 @@ DeviceStateNormal::DeviceStateNormal(DeviceModel * dm) :
     cout << "DeviceStateNormal constructor triggered" << endl;
 }
 
+DeviceStateNormal::~DeviceStateNormal() {
+    cout << "DeviceStateNormal ~destructor triggered" << endl;
+    cout << "  ... here save state to be implemented (in needed)" << endl;
+}
+
 void DeviceStateNormal::save_to_memory(int memory_slot) {
     cout << "DeviceStateNormal::save_to_memory " << memory_slot << endl;
     _model->save_to_memory(memory_slot);
@@ -34,4 +39,14 @@ void DeviceStateNormal::next_step_level() {
 void DeviceStateNormal::prev_step_level() {
     cout << "DeviceStateNormal::prev_step_level" << endl;
     _model->prev_step_level();
+};
+
+State DeviceStateNormal::click_change_state() {
+    cout << "DeviceStateNormal::click_change_state" << endl;
+    return State::Direct;
+};
+
+State DeviceStateNormal::long_click_change_state() {
+    cout << "DeviceStateNormal::long_click_change_state" << endl;
+    return State::Calibration;
 };
