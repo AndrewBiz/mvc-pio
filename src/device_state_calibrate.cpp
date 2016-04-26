@@ -31,14 +31,14 @@ void DeviceStateCalibrate::change_value(int8_t steps) {
     _model->change_value(steps);
 };
 
-void DeviceStateCalibrate::next_step_level() {
-    cout << "FAKE! DeviceStateCalibrate::next_step_level" << endl;
-    _model->next_step_level();
+void DeviceStateCalibrate::next_step_level_n() {
+    cout << "FAKE! DeviceStateCalibrate::next_step_level_n" << endl;
+    _model->next_step_level_n();
 };
 
-void DeviceStateCalibrate::prev_step_level() {
-    cout << "FAKE! DeviceStateCalibrate::prev_step_level" << endl;
-    _model->prev_step_level();
+void DeviceStateCalibrate::prev_step_level_n() {
+    cout << "FAKE! DeviceStateCalibrate::prev_step_level_n" << endl;
+    _model->prev_step_level_n();
 };
 
 State DeviceStateCalibrate::click_change_state() {

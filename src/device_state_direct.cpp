@@ -31,14 +31,14 @@ void DeviceStateDirect::change_value(int8_t steps) {
     _model->change_value(steps);
 };
 
-void DeviceStateDirect::next_step_level() {
-    cout << "FAKE! DeviceStateDirect::next_step_level" << endl;
-    _model->next_step_level();
+void DeviceStateDirect::next_step_level_n() {
+    cout << "FAKE! DeviceStateDirect::next_step_level_n" << endl;
+    _model->next_step_level_n();
 };
 
-void DeviceStateDirect::prev_step_level() {
-    cout << "FAKE! DeviceStateDirect::prev_step_level" << endl;
-    _model->prev_step_level();
+void DeviceStateDirect::prev_step_level_n() {
+    cout << "FAKE! DeviceStateDirect::prev_step_level_n" << endl;
+    _model->prev_step_level_n();
 };
 
 State DeviceStateDirect::click_change_state() {

@@ -12,23 +12,51 @@ public:
     void initialize();
     void save_to_memory(int memory_slot);
     void load_from_memory(int memory_slot);
-    void set_value(uint32_t v);
+
     void change_value(int8_t steps);
     uint32_t get_value();
-    uint32_t get_step_level();
-    void next_step_level();
-    void prev_step_level();
+    uint32_t get_step_level_n();
+    void next_step_level_n();
+    void prev_step_level_n();
+
+    void change_dvalue(int8_t steps);
+    uint32_t get_dvalue();
+    uint32_t get_step_level_d();
+    void next_step_level_d();
+    void prev_step_level_d();
 
 protected:
+    static const uint32_t DefValue = 1000;
     static const uint32_t MaxValue = 20000000;
     static const uint32_t MinValue = 0;
-    static const uint8_t MaxStepLevels = 7;
-    static const uint8_t DefStepLevelIndex = 3;
-    static constexpr uint32_t StepLevel[MaxStepLevels] = { 1, 10, 100, 1000, 10000, 100000, 1000000 };
+    static const uint8_t MaxStepLevelsN = 7;
+    static const uint8_t DefStepLevelIndexN = 3;
+    static constexpr uint32_t StepLevelN[MaxStepLevelsN] = { 1, 10, 100, 1000, 10000, 100000, 1000000 };
 
+    static const uint32_t DefDValue = 1000;
+    static const uint32_t MaxDValue = 690000000;
+    static const uint32_t MinDValue = 0;
+    static const uint8_t MaxStepLevelsD = 9;
+    static const uint8_t DefStepLevelIndexD = 4;
+    static constexpr uint32_t StepLevelD[MaxStepLevelsD] = { 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000 };
+
+    static const uint32_t DefCValue = 125000000;
+    static const uint32_t ThresholdCValue = 20000000;
+    static const uint8_t MaxStepLevelsC = 7;
+    static const uint8_t DefStepLevelIndexC = 0;
+    static constexpr uint32_t StepLevelC[MaxStepLevelsC] = { 1, 10, 100, 1000, 10000, 100000, 10000000 };
 private:
-    uint32_t _value;
-    uint8_t _step_level_index;
+    uint32_t _value;    // master value in Normal mode
+    uint8_t _step_level_index_n;
+
+    uint32_t _dvalue;   // master value in Direct mode
+    uint8_t _step_level_index_d;
+
+    uint32_t _cvalue;   // master value in Calibrate mode
+    uint8_t _step_level_index_c;
+
+    void _calculate_value();
+    void _calculate_dvalue();
 };
 
 #endif
