@@ -51,10 +51,10 @@ void DeviceController::handle_event(char evt) {
         _state->change_value(5);
         break;
     case 'h':  //prev step
-        _state->prev_step_level_n();
+        _state->prev_step_level();
         break;
     case 'l':  //next step
-        _state->next_step_level_n();
+        _state->next_step_level();
         break;
     case 's':  //change state - click
         change_state_to(_state->click_change_state());

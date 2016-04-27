@@ -27,18 +27,18 @@ void DeviceStateDirect::load_from_memory(int memory_slot) {
 };
 
 void DeviceStateDirect::change_value(int8_t steps) {
-    cout << "FAKE! DeviceStateDirect::change_value" << endl;
-    _model->change_value(steps);
+    cout << "DeviceStateDirect::change_value" << endl;
+    _model->change_dvalue(steps);
 };
 
-void DeviceStateDirect::next_step_level_n() {
-    cout << "FAKE! DeviceStateDirect::next_step_level_n" << endl;
-    _model->next_step_level_n();
+void DeviceStateDirect::next_step_level() {
+    cout << "DeviceStateDirect::next_step_level" << endl;
+    _model->next_step_level_d();
 };
 
-void DeviceStateDirect::prev_step_level_n() {
-    cout << "FAKE! DeviceStateDirect::prev_step_level_n" << endl;
-    _model->prev_step_level_n();
+void DeviceStateDirect::prev_step_level() {
+    cout << "DeviceStateDirect::prev_step_level" << endl;
+    _model->prev_step_level_d();
 };
 
 State DeviceStateDirect::click_change_state() {

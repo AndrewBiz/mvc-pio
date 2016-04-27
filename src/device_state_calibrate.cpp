@@ -28,16 +28,19 @@ void DeviceStateCalibrate::load_from_memory(int memory_slot) {
 
 void DeviceStateCalibrate::change_value(int8_t steps) {
     cout << "FAKE! DeviceStateCalibrate::change_value" << endl;
+//TODO
     _model->change_value(steps);
 };
 
-void DeviceStateCalibrate::next_step_level_n() {
-    cout << "FAKE! DeviceStateCalibrate::next_step_level_n" << endl;
+void DeviceStateCalibrate::next_step_level() {
+    cout << "FAKE! DeviceStateCalibrate::next_step_level" << endl;
+//TODO
     _model->next_step_level_n();
 };
 
-void DeviceStateCalibrate::prev_step_level_n() {
-    cout << "FAKE! DeviceStateCalibrate::prev_step_level_n" << endl;
+void DeviceStateCalibrate::prev_step_level() {
+    cout << "FAKE! DeviceStateCalibrate::prev_step_level" << endl;
+//TODO
     _model->prev_step_level_n();
 };
 

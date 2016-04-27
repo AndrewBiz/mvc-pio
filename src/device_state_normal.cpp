@@ -31,13 +31,13 @@ void DeviceStateNormal::change_value(int8_t steps) {
     _model->change_value(steps);
 };
 
-void DeviceStateNormal::next_step_level_n() {
-    cout << "DeviceStateNormal::next_step_level_n" << endl;
+void DeviceStateNormal::next_step_level() {
+    cout << "DeviceStateNormal::next_step_level" << endl;
     _model->next_step_level_n();
 };
 
-void DeviceStateNormal::prev_step_level_n() {
-    cout << "DeviceStateNormal::prev_step_level_n" << endl;
+void DeviceStateNormal::prev_step_level() {
+    cout << "DeviceStateNormal::prev_step_level" << endl;
     _model->prev_step_level_n();
 };
 
