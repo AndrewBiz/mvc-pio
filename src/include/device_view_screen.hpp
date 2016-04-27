@@ -18,6 +18,7 @@ private:
     DeviceModel * _model;
     char _scr_buf1[ScrBufSize]; // screen Line1
     char _scr_buf2[ScrBufSize]; // screen Line2
+    char * _to_kilo(char * buf, int buf_len, uint32_t v);
 };
 
 #endif
