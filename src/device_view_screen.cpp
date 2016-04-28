@@ -40,12 +40,13 @@ void DeviceViewScreen::update() {
         break;
     case State::Calibration:
 //TODO
-        strncpy(_scr_buf1, "UNDER           ", ScrBufSize);
-        strncpy(_scr_buf2, "CONSTRUCTION !!!", ScrBufSize);
+        strncpy(_scr_buf1, "UNDER           ", ScrBufSize-1);
+        strncpy(_scr_buf2, "CONSTRUCTION !!!", ScrBufSize-1);
         break;
     default:
-        strncpy(_scr_buf1, "ERROR!ERROR!ERROR!", ScrBufSize);
-        strncpy(_scr_buf2, "ERROR!ERROR!ERROR!", ScrBufSize);
+        strncpy(_scr_buf1, "ERROR!ERROR!XXXXYYY", ScrBufSize-1);
+        strncpy(_scr_buf2, "ERROR!ERROR!ERROYYY", ScrBufSize-1);
+        break;
     }
     draw_screen();
 }

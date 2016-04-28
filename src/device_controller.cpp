@@ -15,8 +15,8 @@ DeviceController::DeviceController(DeviceModel * m) :
 {
     cout << "DeviceController constructor triggered" << endl;
     // _screen - welcome message
-    _screen->change_state_to(State::Normal);
     _model->initialize();
+    _screen->change_state_to(State::Normal);
 }
 
 DeviceController::~DeviceController() {
