@@ -11,9 +11,9 @@ using namespace std;
 class Model {
 public:
     virtual ~Model();
-    virtual void attach_observer(View*);
-    virtual void detach_observer(View*);
-    virtual void notify_observers();
+    void attach_observer(View*);
+    void detach_observer(View*);
+    void notify_observers();
 protected:
     Model();
     static const size_t MaxObservers = 1;
