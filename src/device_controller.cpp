@@ -10,18 +10,15 @@ using namespace std;
 
 DeviceController::DeviceController(DeviceModel * m) :
     _model(m),
-    _screen(new DeviceViewScreen(_model)),
     _state(new DeviceStateNormal(_model))
 {
     cout << "DeviceController constructor triggered" << endl;
     // _screen - welcome message
     _model->initialize();
-    _screen->change_state_to(State::Normal);
 }
 
 DeviceController::~DeviceController() {
     cout << "DeviceController ~destructor triggered" << endl;
-    delete _screen;
     delete _state;
 }
 
@@ -87,5 +84,4 @@ void DeviceController::change_state_to(State new_state) {
     default:
         break;
     }
-    _screen->change_state_to(new_state);
 }
