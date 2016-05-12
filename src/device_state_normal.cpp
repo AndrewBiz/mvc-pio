@@ -6,7 +6,8 @@
 using namespace std;
 
 DeviceStateNormal::DeviceStateNormal(DeviceModel * dm) :
-    DeviceState(dm)
+    DeviceState(dm),
+    _screen(new DeviceViewScreenNormal(dm))
 {
     cout << "DeviceStateNormal constructor triggered" << endl;
 }
@@ -14,6 +15,7 @@ DeviceStateNormal::DeviceStateNormal(DeviceModel * dm) :
 DeviceStateNormal::~DeviceStateNormal() {
     cout << "DeviceStateNormal ~destructor triggered" << endl;
     cout << "  ... here save state to be implemented (in needed)" << endl;
+    delete _screen;
 }
 
 void DeviceStateNormal::save_to_memory(int memory_slot) {
