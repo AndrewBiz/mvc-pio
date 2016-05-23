@@ -15,6 +15,7 @@ DeviceModel::DeviceModel() :
     _step_level_index_c(DefStepLevelIndexC)
 {
     cout << "DeviceModel constructor triggered" << endl;
+    initialize();
 }
 
 void DeviceModel::initialize() {
@@ -25,7 +26,6 @@ void DeviceModel::initialize() {
     _calculate_dvalue();
     cout << "... reading default step_level from Memory M0: " << StepLevelN[_step_level_index_n]\
          << " (" << int(_step_level_index_n) << ") " << endl;
-    notify_observers();
 }
 
 void DeviceModel::save_to_memory(int memory_slot) {

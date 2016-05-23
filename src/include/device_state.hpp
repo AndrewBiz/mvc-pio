@@ -19,7 +19,6 @@ public:
     virtual State long_click_change_state() = 0; //pure virtual function
 
 protected:
-    // DeviceController * _controller;  //Context who uses the State
     DeviceModel * _model;
 };
 #endif
