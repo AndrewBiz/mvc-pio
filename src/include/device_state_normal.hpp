@@ -17,6 +17,6 @@ public:
     virtual State click_change_state();
     virtual State long_click_change_state();
 private:
-    DeviceViewScreenNormal * _screen;
+    DeviceViewScreenNormal _screen;
 };
 #endif

@@ -11,6 +11,7 @@ DeviceViewScreenNormal::DeviceViewScreenNormal(DeviceModel * m) :
     DeviceViewScreen(m)
 {
     cout << "DeviceViewScreenNormal constructor triggered" << endl;
+    update();
 }
 
 DeviceViewScreenNormal::~DeviceViewScreenNormal() {

@@ -10,8 +10,6 @@ using namespace std;
 DeviceViewScreen::DeviceViewScreen(DeviceModel * m) :
     _model(m)
 {
-    // snprintf(_scr_buf1, ScrBufSize, "                ");
-    // snprintf(_scr_buf2, ScrBufSize, "                ");
     memset(_scr_buf1, '\0', ScrBufSize);
     memset(_scr_buf2, '\0', ScrBufSize);
     cout << "DeviceViewScreen constructor triggered" << endl;
