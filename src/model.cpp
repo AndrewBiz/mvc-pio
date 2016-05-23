@@ -25,14 +25,16 @@ void Model::attach_observer(View * v) {
     cout << "Model::attach_observer triggered" << endl;
     if (_number_observers < MaxObservers) {
         _observer[_number_observers++] = v;
-    }
+    };
+    cout << ".... _number_observers = " << _number_observers << endl;
 }
 
 void Model::detach_observer(View * v) {
     cout << "Model::detach_observer triggered" << endl;
-    for (size_t i = 0; i < MaxObservers; i++) {
-        if (_observer[i] == v) _observer[i] = nullptr;
+    if (_number_observers > 0) {
+        _observer[--_number_observers] = nullptr;
     };
+    cout << ".... _number_observers = " << _number_observers << endl;
 }
 
 void Model::notify_observers() {
