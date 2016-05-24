@@ -25,6 +25,12 @@ public:
     void next_step_level_d();
     void prev_step_level_d();
 
+    void change_cvalue(int8_t steps);
+    uint32_t get_cvalue();
+    uint32_t get_step_level_c();
+    void next_step_level_c();
+    void prev_step_level_c();
+
 protected:
     static const uint32_t DefValue = 1000;
     static const uint32_t MaxValue = 20000000;
@@ -42,9 +48,9 @@ protected:
 
     static const uint32_t DefCValue = 125000000;
     static const uint32_t ThresholdCValue = 20000000;
-    static const uint8_t MaxStepLevelsC = 7;
+    static const uint8_t MaxStepLevelsC = 5;
     static const uint8_t DefStepLevelIndexC = 0;
-    static constexpr uint32_t StepLevelC[MaxStepLevelsC] = { 1, 10, 100, 1000, 10000, 100000, 10000000 };
+    static constexpr uint32_t StepLevelC[MaxStepLevelsC] = { 1, 10, 100, 1000, 10000 };
 private:
     uint32_t _value;    // master value in Normal mode
     uint8_t _step_level_index_n;
@@ -58,5 +64,4 @@ private:
     void _calculate_value();
     void _calculate_dvalue();
 };
-
 #endif

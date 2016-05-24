@@ -22,6 +22,7 @@ void DeviceModel::initialize() {
     cout << "DeviceModel::initialize triggered" << endl;
     cout << "... reading default value from Memory M0: " << endl;
     cout << "...... value = " << _value << endl;
+    cout << "... reading default cvalue from Memory Calibrate: " << endl;
     cout << "...... cvalue = " << _cvalue << endl;
     _calculate_dvalue();
     cout << "... reading default step_level from Memory M0: " << StepLevelN[_step_level_index_n]\
@@ -122,4 +123,41 @@ uint32_t DeviceModel::get_dvalue() {
 uint32_t DeviceModel::get_step_level_d() {
     cout << "DeviceModel::get_step_level_d triggered" << endl;
     return StepLevelD[_step_level_index_d];
+}
+
+// functions for Calibrate mode
+constexpr uint32_t DeviceModel::StepLevelC[MaxStepLevelsC];
+
+void DeviceModel::change_cvalue(int8_t steps) {
+    int32_t delta = get_step_level_c() * steps;
+    cout << "DeviceModel::change_cvalue triggered, delta=steps*level= " << delta << endl;
+    if (delta < 0) {
+        _cvalue = (_cvalue + delta >= DefCValue - ThresholdCValue) ? _cvalue + delta : _cvalue;
+    } else {
+        _cvalue = (_cvalue + delta <= DefCValue + ThresholdCValue) ? _cvalue + delta : _cvalue;
+    }
+    _calculate_dvalue();
+    notify_observers();
+}
+
+void DeviceModel::next_step_level_c() {
+    cout << "DeviceModel::next_step_level_c triggered" << endl;
+    _step_level_index_c = (_step_level_index_c + 1 >= MaxStepLevelsC) ? MaxStepLevelsC - 1 : _step_level_index_c + 1;
+    notify_observers();
+}
+
+void DeviceModel::prev_step_level_c() {
+    cout << "DeviceModel::prev_step_level_c triggered" << endl;
+    _step_level_index_c = (_step_level_index_c - 1 < 0) ? 0 : _step_level_index_c - 1;
+    notify_observers();
+}
+
+uint32_t DeviceModel::get_cvalue() {
+    cout << "DeviceModel::get_cvalue triggered" << endl;
+    return _cvalue;
+}
+
+uint32_t DeviceModel::get_step_level_c() {
+    cout << "DeviceModel::get_step_level_c triggered" << endl;
+    return StepLevelC[_step_level_index_c];
 }

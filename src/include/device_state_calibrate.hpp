@@ -3,6 +3,7 @@
 #ifndef DEVICE_STATE_CALIBRATE_HPP
 #define DEVICE_STATE_CALIBRATE_HPP
 #include "device_state.hpp"
+#include "device_view_screen_calibrate.hpp"
 
 class DeviceStateCalibrate : public DeviceState {
 public:
@@ -15,5 +16,7 @@ public:
     virtual void prev_step_level();
     virtual State click_change_state();
     virtual State long_click_change_state();
+private:
+    DeviceViewScreenCalibrate _screen;
 };
 #endif
