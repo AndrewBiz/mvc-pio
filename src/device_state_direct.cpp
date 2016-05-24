@@ -6,7 +6,8 @@
 using namespace std;
 
 DeviceStateDirect::DeviceStateDirect(DeviceModel * dm) :
-    DeviceState(dm)
+    DeviceState(dm),
+    _screen(DeviceViewScreenDirect(dm))
 {
     cout << "DeviceStateDirect constructor triggered" << endl;
 }
